@@ -50,7 +50,7 @@ To generate graphs from results: `python paper_graphing.ipynb`
 
 ## Data Quality and Resume Filtering
 
-Thanks to Iván Arcuschin and David Chanin for identifying demographic inconsistencies in the original resume dataset.
+Thanks to Iván Arcuschin and David Chanin for identifying demographic inconsistencies in the original resume dataset and providing the filtering code.
 To reproduce our spot-check filtering, add the following flag to your prompt creation:
 
 ```
