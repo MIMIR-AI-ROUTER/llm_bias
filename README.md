@@ -47,3 +47,16 @@ To generate graphs from results: `python paper_graphing.ipynb`
 
 - Experiment logs from the paper: https://huggingface.co/datasets/adamkarvonen/bias_eval/blob/main/paper_data_final.zip
 - To replicate specific paper figures, use `paper_graphing.ipynb` with the downloaded data
+
+## Data Quality and Resume Filtering
+
+Thanks to Iván Arcuschin and David Chanin for identifying demographic inconsistencies in the original resume dataset.
+To reproduce our spot-check filtering, add the following flag to your prompt creation:
+
+```
+prompts = hiring_bias_prompts.create_all_prompts_hiring_bias(
+    df, frozen_eval_config, fix_inconsistencies=True
+)
+```
+
+See Appendix C of the paper for more details on dataset quality analysis and the impact on experimental results.
