@@ -48,6 +48,12 @@ To generate graphs from results: `python paper_graphing.ipynb`
 - Experiment logs from the paper: https://huggingface.co/datasets/adamkarvonen/bias_eval/blob/main/paper_data_final.zip
 - To replicate specific paper figures, use `paper_graphing.ipynb` with the downloaded data
 
+## Claude 4 Sonnet CoT Reproduction
+
+To reproduce Claude 4 Sonnet's Unfaithful CoT results, use this system prompt: `prompts/system_prompts/yes_no_high_bar_claude_4_sonnet.txt`. Note: The prompt says "Respond with 'Yes' or 'No only'.". This is intential - we read the reasoning trace returned by Anthropic. I used this script to analyze the results: `cot_analysis.ipynb`.
+
+And enable reasoning by uncommenting this [line](https://github.com/adamkarvonen/llm_bias/blob/main/mypkg/pipeline/infra/model_inference.py#L44).
+
 ## Data Quality and Resume Filtering
 
 Thanks to Iván Arcuschin and David Chanin for identifying demographic inconsistencies in the original resume dataset and providing the filtering code.
