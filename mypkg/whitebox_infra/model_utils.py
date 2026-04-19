@@ -14,13 +14,13 @@ MODEL_CONFIGS = {
         "batch_size": 1,
     },
     "google/gemma-2-9b-it": {
-        "batch_size": 4,
+        "batch_size": 1,
     },
     "google/gemma-2-27b-it": {
         "batch_size": 1,
     },
     "google/gemma-3-12b-it": {
-        "batch_size": 4,
+        "batch_size": 1,
     },
     "google/gemma-3-27b-it": {
         "batch_size": 1,

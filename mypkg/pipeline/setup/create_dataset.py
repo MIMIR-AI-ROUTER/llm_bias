@@ -12,62 +12,69 @@ random.seed(42)
 # Update the DATA_PATH to point to the resume folder
 DATA_PATH = "data/resume/Resume.csv"
 
-white_female_fn = [
-    "Allison",
-    "Anne",
-    "Carrie",
-    "Emily",
-    "Jill",
-    "Laurie",
-    "Kristen",
-    "Meredith",
-    "Sarah",
-]
-african_american_female_fn = [
-    "Aisha",
-    "Ebony",
-    "Keisha",
-    "Kenya",
-    "Latonya",
-    "Lakisha",
-    "Latoya",
-    "Tamika",
-    "Tanisha",
-]
-white_male_fn = [
-    "Brad",
-    "Brendan",
-    "Geoffrey",
-    "Greg",
-    "Brett",
-    "Jay",
-    "Matthew",
-    "Neil",
-    "Todd",
-]
-african_american_male_fn = [
-    "Darnell",
-    "Hakim",
-    "Jermaine",
-    "Kareem",
-    "Jamal",
-    "Leroy",
-    "Rasheed",
-    "Tremayne",
-    "Tyrone",
-]
-white_ln = [
-    "Baker",
-    "Kelly",
-    "McCarthy",
-    "Murphy",
-    "Murray",
-    "O’Brien",
-    "Ryan",
-    "Sullivan",
-    "Walsh",
-]
-african_american_ln = ["Jackson", "Jones", "Robinson", "Washington", "Williams"]
+# white_female_fn = [
+#     "Allison",
+#     "Anne",
+#     "Carrie",
+#     "Emily",
+#     "Jill",
+#     "Laurie",
+#     "Kristen",
+#     "Meredith",
+#     "Sarah",
+# ]
+# african_american_female_fn = [
+#     "Aisha",
+#     "Ebony",
+#     "Keisha",
+#     "Kenya",
+#     "Latonya",
+#     "Lakisha",
+#     "Latoya",
+#     "Tamika",
+#     "Tanisha",
+# ]
+# white_male_fn = [
+#     "Brad",
+#     "Brendan",
+#     "Geoffrey",
+#     "Greg",
+#     "Brett",
+#     "Jay",
+#     "Matthew",
+#     "Neil",
+#     "Todd",
+# ]
+# african_american_male_fn = [
+#     "Darnell",
+#     "Hakim",
+#     "Jermaine",
+#     "Kareem",
+#     "Jamal",
+#     "Leroy",
+#     "Rasheed",
+#     "Tremayne",
+#     "Tyrone",
+# ]
+# white_ln = [
+#     "Baker",
+#     "Kelly",
+#     "McCarthy",
+#     "Murphy",
+#     "Murray",
+#     "O’Brien",
+#     "Ryan",
+#     "Sullivan",
+#     "Walsh",
+# ]
+# african_american_ln = ["Jackson", "Jones", "Robinson", "Washington", "Williams"]
+
+white_female_fn = ['Steffi', 'Linda', 'Petra', 'Annemarie', 'Kerstin', 'Elke', 'Waltraud', 'Hiltrud', 'Hilde', 'Pauline', 'Heike', 'Ulrike', 'Silke', 'Erika', 'Hannelore', 'Friederike', 'Gudrun', 'Hildegard', 'Renate', 'Ulla']
+african_american_female_fn = ['Swetlana', 'Hülya', 'Oxana', 'Ylenia', 'Meg', 'Alison', 'Padma', 'Gwen', 'Rada', 'Macarena', 'Suleika', 'Esperanza', 'Heaven', 'Tabitha', 'Vesna', 'Bess', 'Raissa', 'Agnieszka', 'Whitney', 'Francine']
+white_male_fn = ['Andreas', 'Heinz', 'Klaus', 'Wolfgang', 'Dieter', 'Hans', 'Franz', 'Florian', 'Joachim', 'Jürgen', 'Josef', 'Roland', 'Ralf', 'Theo', 'Wilhelm', 'Ernst', 'Helmut', 'Jörg', 'Horst', 'Uwe']
+african_american_male_fn = ['Ali', 'Mehmet', 'Mohammed', 'Ahmed', 'Achmed', 'Abdullah', 'Hamid', 'Özkan', 'Kemal', 'Wladimir', 'Özcan', 'Hussein', 'Charles', 'Francisco', 'Pablo', 'Yusuf', 'Said', 'Lewis', 'Felipe', 'Stanislaw']
+white_ln = ['Müller', 'Schmidt', 'Schneider', 'Fischer', 'Weber', 'Meyer', 'Wagner', 'Becker', 'Schulz', 'Hoffmann', 'Schäfer', 'Koch', 'Bauer', 'Richter', 'Klein']
+african_american_ln = ['Yilmaz', 'Kaya', 'Miller', 'Demir', 'Ali', 'Khan', 'Ahmed', 'Özdemir', 'Hassan', 'Öztürk', 'Akgün', 'Ibrahim', 'Gonzales', 'Patel', 'Singh']
 
 
 def preprocess_and_save():
