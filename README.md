@@ -4,6 +4,27 @@ This repository contains the code for the paper [Robustly Improving LLM Fairness
 
 We evaluate and mitigate race/gender hiring bias in LLMs. The code supports both local GPU inference and API-based models via OpenRouter. For open models, we implement inference-time interventions to reduce bias.
 
+## Intermezzo: Adapting this to German vs Foreign names
+
+### What this paper does
+
+- There is a set of applications in `Resume.csv` which gets modified. The resulting resumes and a job description is inserted into several pre-defined prompts, asking whether or not the candidate is qualified. The resumes have either only the applicant name changed ("simple eval") or also use more extensive data replacement ("realistic eval").
+- The variable which is changed and the results observed are the applicant names. There are four pools of first names (black female, black male, white female, white male) and two pools of family names (black, white) to create four categories of names, two for each gender and two for each race.
+- Both the positive answer rate and the logprobs of LLMs are evaluated.
+- Bias is determined as the difference in positive answer rates
+
+### Adapation to the EU case
+
+- I changed the first names based on https://econtent.hogrefe.com/doi/10.1027/1864-9335/a000383#_i21 where common male and female first names based on their perceived foreignness or lack thereof are selected 
+- Family names are AI generated to match the group
+- the rest of the experiment is identical
+
+### Results
+
+Takes about 2.5h on a GH200 to test five models, can be adapted for API usage
+
+Find the results in `results.txt` in this repo. Main takeaway: The direction is the same, the extent usually 50-100% of the original. 
+
 ## Setup
 
 Create and activate a virtual environment, then:

@@ -1,0 +1,129 @@
+
+════════════════════════════════════════════════════════════════════════════════
+  LLM HIRING BIAS ANALYSIS
+  Files loaded: 180  (orig=90, german_foreign=90)
+════════════════════════════════════════════════════════════════════════════════
+────────────────────────────────────────────────────────────────────────────────
+  1. OVERALL BIAS BY DATASET  (mean across all models/versions/job types)
+────────────────────────────────────────────────────────────────────────────────
+
+  Interpretation:
+    ΔGender(rate/prob): Female − Male   (+ = female favored)
+    ΔRace  (rate/prob): Black  − White  (+ = black  favored)
+    rate = binary yes/no acceptance;  prob = continuous yes-probability
+
+
+Bias by dataset
+                ΔGender(rate)  ΔRace(rate)  ΔGender(prob)  ΔRace(prob)  Overall(rate)
+dataset                                                                              
+german_foreign        +0.0154      +0.0118        +0.0138      +0.0108        +0.7667
+orig                  +0.0138      +0.0280        +0.0127      +0.0256        +0.7775
+
+────────────────────────────────────────────────────────────────────────────────
+  2. BIAS BY DATASET × MODEL
+────────────────────────────────────────────────────────────────────────────────
+
+Bias by dataset and model
+                                                          ΔGender(rate)  ΔRace(rate)  ΔGender(prob)  ΔRace(prob)  Overall(rate)
+dataset        model                                                                                                           
+german_foreign google_gemma-2-27b-it                            +0.0006      +0.0048        +0.0019      +0.0044        +0.8622
+               google_gemma-2-2b-it                             +0.0429      +0.0243        +0.0361      +0.0221        +0.6560
+               google_gemma-2-9b-it                             +0.0069      +0.0141        +0.0051      +0.0108        +0.8512
+               google_gemma-3-12b-it                            +0.0174      +0.0090        +0.0162      +0.0090        +0.7198
+               google_gemma-3-27b-it                            +0.0090      +0.0048        +0.0078      +0.0051        +0.8772
+               mistralai_Mistral-Small-24B-Instruct-2501        +0.0153      +0.0135        +0.0159      +0.0137        +0.6338
+orig           google_gemma-2-27b-it                            +0.0003      +0.0123        -0.0002      +0.0114        +0.8728
+               google_gemma-2-2b-it                             +0.0336      +0.0498        +0.0285      +0.0390        +0.6838
+               google_gemma-2-9b-it                             +0.0072      +0.0204        +0.0055      +0.0211        +0.8616
+               google_gemma-3-12b-it                            +0.0114      +0.0276        +0.0123      +0.0280        +0.7219
+               google_gemma-3-27b-it                            +0.0093      +0.0141        +0.0081      +0.0153        +0.8839
+               mistralai_Mistral-Small-24B-Instruct-2501        +0.0207      +0.0435        +0.0218      +0.0387        +0.6410
+
+────────────────────────────────────────────────────────────────────────────────
+  3. BIAS BY DATASET × ANTI-BIAS VERSION (v0 = no statement, v1–v4 = variants)
+────────────────────────────────────────────────────────────────────────────────
+
+Bias by dataset and version
+                        ΔGender(rate)  ΔRace(rate)  ΔGender(prob)  ΔRace(prob)  Overall(rate)
+dataset        version                                                                       
+german_foreign v0             +0.0205      +0.0100        +0.0180      +0.0074        +0.6802
+               v1             +0.0128      +0.0118        +0.0119      +0.0107        +0.7924
+               v2             +0.0123      +0.0103        +0.0133      +0.0099        +0.7849
+               v3             +0.0175      +0.0110        +0.0151      +0.0107        +0.7713
+               v4             +0.0138      +0.0158        +0.0108      +0.0154        +0.8047
+orig           v0             +0.0190      +0.0215        +0.0166      +0.0203        +0.6904
+               v1             +0.0125      +0.0265        +0.0110      +0.0235        +0.8000
+               v2             +0.0118      +0.0253        +0.0117      +0.0252        +0.7982
+               v3             +0.0178      +0.0308        +0.0177      +0.0269        +0.7849
+               v4             +0.0078      +0.0358        +0.0064      +0.0320        +0.8139
+
+────────────────────────────────────────────────────────────────────────────────
+  4. BIAS BY DATASET × JOB TYPE
+────────────────────────────────────────────────────────────────────────────────
+
+Bias by dataset and job type
+                                     ΔGender(rate)  ΔRace(rate)  ΔGender(prob)  ΔRace(prob)  Overall(rate)
+dataset        job_type                                                                                   
+german_foreign base_description            +0.0038      +0.0001        +0.0039      -0.0002        +0.8878
+               gm_job_description          +0.0086      +0.0001        +0.0084      +0.0019        +0.8541
+               meta_job_description        +0.0338      +0.0350        +0.0292      +0.0309        +0.5582
+orig           base_description            +0.0032      +0.0044        +0.0035      +0.0052        +0.8884
+               gm_job_description          +0.0039      +0.0150        +0.0048      +0.0158        +0.8608
+               meta_job_description        +0.0342      +0.0646        +0.0297      +0.0557        +0.5833
+
+────────────────────────────────────────────────────────────────────────────────
+  5. RAW ACCEPTANCE RATES BY DATASET × MODEL
+────────────────────────────────────────────────────────────────────────────────
+
+  Columns: F=Female, M=Male, W=White, B=Black   (rate = binary, prob = continuous)
+
+
+Rates by dataset and model
+                                                          F(rate)  M(rate)  W(rate)  B(rate)  F(prob)  M(prob)  W(prob)  B(prob)
+dataset        model                                                                                                            
+german_foreign google_gemma-2-27b-it                      +0.8625  +0.8618  +0.8598  +0.8645  +0.8551  +0.8532  +0.8519  +0.8563
+               google_gemma-2-2b-it                       +0.6775  +0.6345  +0.6439  +0.6682  +0.6642  +0.6281  +0.6351  +0.6572
+               google_gemma-2-9b-it                       +0.8546  +0.8477  +0.8441  +0.8582  +0.8463  +0.8412  +0.8383  +0.8492
+               google_gemma-3-12b-it                      +0.7285  +0.7111  +0.7153  +0.7243  +0.7281  +0.7119  +0.7155  +0.7244
+               google_gemma-3-27b-it                      +0.8817  +0.8727  +0.8748  +0.8796  +0.8812  +0.8735  +0.8748  +0.8799
+               mistralai_Mistral-Small-24B-Instruct-2501  +0.6414  +0.6261  +0.6270  +0.6405  +0.6258  +0.6099  +0.6110  +0.6247
+orig           google_gemma-2-27b-it                      +0.8730  +0.8727  +0.8667  +0.8790  +0.8654  +0.8656  +0.8598  +0.8712
+               google_gemma-2-2b-it                       +0.7006  +0.6670  +0.6589  +0.7087  +0.6835  +0.6550  +0.6497  +0.6887
+               google_gemma-2-9b-it                       +0.8652  +0.8579  +0.8513  +0.8718  +0.8564  +0.8508  +0.8430  +0.8641
+               google_gemma-3-12b-it                      +0.7276  +0.7162  +0.7081  +0.7357  +0.7281  +0.7158  +0.7079  +0.7360
+               google_gemma-3-27b-it                      +0.8886  +0.8793  +0.8769  +0.8910  +0.8872  +0.8790  +0.8755  +0.8907
+               mistralai_Mistral-Small-24B-Instruct-2501  +0.6514  +0.6306  +0.6192  +0.6628  +0.6345  +0.6127  +0.6042  +0.6429
+
+────────────────────────────────────────────────────────────────────────────────
+  6. ORIG → GERMAN_FOREIGN SHIFT  (german_foreign bias − orig bias)
+────────────────────────────────────────────────────────────────────────────────
+
+  Positive shift means german_foreign names amplify that bias direction.
+
+
+Shift in bias (german_foreign − orig) per model
+                                           ΔGender(rate)  ΔRace(rate)  ΔGender(prob)  ΔRace(prob)
+model                                                                                            
+google_gemma-2-27b-it                            +0.0003      -0.0075        +0.0021      -0.0070
+google_gemma-2-2b-it                             +0.0093      -0.0255        +0.0076      -0.0169
+google_gemma-2-9b-it                             -0.0003      -0.0063        -0.0004      -0.0103
+google_gemma-3-12b-it                            +0.0060      -0.0186        +0.0039      -0.0191
+google_gemma-3-27b-it                            -0.0003      -0.0093        -0.0004      -0.0102
+mistralai_Mistral-Small-24B-Instruct-2501        -0.0054      -0.0300        -0.0059      -0.0250
+
+────────────────────────────────────────────────────────────────────────────────
+  7. SUMMARY STATISTICS
+────────────────────────────────────────────────────────────────────────────────
+  [orig]
+    Gender bias (rate): mean=+0.0138  std=0.0255
+    Race   bias (rate): mean=+0.0280  std=0.0386
+    Gender bias (prob): mean=+0.0127
+    Race   bias (prob): mean=+0.0256
+
+  [german_foreign]
+    Gender bias (rate): mean=+0.0154  std=0.0271
+    Race   bias (rate): mean=+0.0118  std=0.0245
+    Gender bias (prob): mean=+0.0138
+    Race   bias (prob): mean=+0.0108
+
+════════════════════════════════════════════════════════════════════════════════
